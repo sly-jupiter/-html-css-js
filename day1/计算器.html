@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>js 练习</title>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body style="background-color: ">
+	<header>
+		this is a head of this page
+	</header>
+<form>
+	x:<br>
+	<input type="text" id="01">
+	<br>
+	y:<br>
+	<input type="text" id="02">
+	<br>
+	<br>
+
+</form>
+<div>
+	<button id="11">+</button>
+	<button id="12">-</button>
+	<button id="13">*</button>
+	<button id="14">/</button>
+	<br>
+</div>
+
+<p>结果：</p>
+<p id="21"></p>
+
+<script type="text/javascript">
+ 	var x,y;
+
+	function getInput() {
+		var a=$('#01').val();
+		x=parseInt(a,10);
+		var b=$('#02').val();
+		y=parseInt(b,10);
+	}
+	// 加法
+	function addition(x,y) {
+		return x+y;
+	}
+	// 减法
+	function subtraction(x,y) {
+		return x-y;
+	}
+	// 乘法
+	function multiplication(x,y) {
+		return x*y;
+	}
+	// 除法
+	function division(x,y) {
+		 if (y==0) {
+		 	alert("除数不可以是0");
+		 	return;
+		 } else {
+		 	return x/y;
+		 }
+	}
+
+
+	$("#11").click(function() {
+		 getInput();
+		var result=addition(x,y);
+		 $('#21').html(String(result));
+	});
+	$('#12').click(function() {
+		 getInput();
+		 var result=subtraction(x,y);
+		 $('#21').html(String(result));
+	});
+	$('#13').click(function() {
+		 getInput();
+		 var result=multiplication(x,y);
+		 $('#21').html(String(result));
+	});
+	$('#14').click(function() {
+		 getInput();
+		 var result=division(x,y);
+		 $('#21').html(String(result));
+	});
+
+
+</script>
+</body>
+</html>
